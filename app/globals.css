@@ -1,0 +1,1819 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap");
+/* ============================== GLOBAL RESET ============================== */
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: #050812;
+  color: #f5f7fb;
+  font-family: Inter, Arial, sans-serif;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ============================== HEADER / NAVIGATION ============================== */
+header {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 max(5vw, 24px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  background: rgba(5, 8, 18, 0.72);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid #ffffff0d;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Space Grotesk";
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+.mark {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #2457ff, #00d9ff);
+  clip-path: polygon(
+    0 0,
+    50% 30%,
+    100% 0,
+    100% 100%,
+    74% 100%,
+    74% 42%,
+    50% 57%,
+    26% 42%,
+    26% 100%,
+    0 100%
+  );
+  color: transparent;
+}
+nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 14px;
+  color: #aeb8ca;
+}
+nav a:hover {
+  color: white;
+}
+.navcta {
+  border: 1px solid #2e75ff !important;
+  padding: 10px 16px;
+  border-radius: 8px;
+  color: #fff !important;
+}
+.menu {
+  display: none;
+  background: none;
+  border: 0;
+  color: white;
+}
+
+/* ============================== HERO (homepage) ============================== */
+.hero {
+  min-height: 820px;
+  padding: 180px max(7vw, 30px) 90px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(#ffffff08 1px, transparent 1px),
+    linear-gradient(90deg, #ffffff08 1px, transparent 1px);
+  background-size: 70px 70px;
+  mask-image: linear-gradient(to bottom, transparent, black, transparent);
+  z-index: -2;
+}
+.glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: -1;
+}
+.one {
+  width: 500px;
+  height: 500px;
+  background: #073aff4a;
+  right: 5%;
+  top: 15%;
+}
+.two {
+  width: 350px;
+  height: 350px;
+  background: #00d5ff1e;
+  left: 25%;
+  bottom: 0;
+}
+.eyebrow,
+.sectionHead span,
+.about span,
+.contact > span {
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  color: #45bfff;
+  font-weight: 700;
+}
+.hero h1 {
+  font: 600 clamp(52px, 7vw, 105px)/0.98 "Space Grotesk";
+  letter-spacing: -0.055em;
+  margin: 25px 0;
+  max-width: 1150px;
+}
+.hero h1 span {
+  background: linear-gradient(90deg, #3e77ff, #2ce1ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.hero > p {
+  font-size: 19px;
+  line-height: 1.7;
+  color: #9ba7ba;
+  max-width: 700px;
+}
+.actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 28px;
+}
+.primary,
+.secondary {
+  padding: 15px 20px;
+  border-radius: 9px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 14px;
+}
+.primary {
+  background: linear-gradient(100deg, #2459ff, #08bde8);
+  box-shadow: 0 10px 35px #087cff33;
+}
+.secondary {
+  border: 1px solid #263043;
+  background: #ffffff05;
+}
+.heroGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  max-width: 760px;
+  margin-top: 75px;
+  border-top: 1px solid #1d2738;
+  padding-top: 25px;
+}
+.heroGrid div {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #1d2738;
+  padding-left: 20px;
+}
+.heroGrid b {
+  font: 600 23px "Space Grotesk";
+  color: #dfe8f7;
+}
+.heroGrid small {
+  color: #68758b;
+  margin-top: 5px;
+}
+
+/* ============================== SECTION HEADINGS (shared across sections) ============================== */
+section:not(.hero) {
+  padding: 110px max(7vw, 30px);
+}
+.sectionHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  align-items: flex-end;
+  margin-bottom: 55px;
+}
+.sectionHead h2,
+.about h2,
+.contact h2 {
+  font: 600 clamp(38px, 5vw, 67px)/1.05 "Space Grotesk";
+  letter-spacing: -0.045em;
+  margin: 18px 0 0;
+}
+.sectionHead > p {
+  max-width: 470px;
+  color: #8591a6;
+  line-height: 1.7;
+}
+
+/* ============================== SERVICES GRID ============================== */
+.serviceGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border: 1px solid #182235;
+}
+.service {
+  padding: 28px 25px;
+  min-height: 340px;
+  border-right: 1px solid #182235;
+  position: relative;
+  background: #090e1a;
+}
+.service:last-child {
+  border: 0;
+}
+.service .num {
+  font-size: 11px;
+  color: #4c5b72;
+  margin-bottom: 50px;
+}
+.service > svg {
+  color: #3ecdf1;
+}
+.service h3 {
+  font: 600 20px "Space Grotesk";
+  margin-top: 25px;
+}
+.service p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #78859a;
+}
+.service a {
+  position: absolute;
+  bottom: 25px;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  font-size: 12px;
+  color: #64cfff;
+}
+
+/* ============================== PROJECTS GRID ============================== */
+.projects {
+  background: #080c16;
+}
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.project {
+  border: 1px solid #182235;
+  background: #0a101c;
+  overflow: hidden;
+}
+.visual {
+  height: 280px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  background: radial-gradient(circle at 50% 40%, #133d7c, #080d17 65%);
+}
+.visual svg {
+  width: 100px;
+  height: 100px;
+  color: #2f8cff;
+  filter: drop-shadow(0 0 25px #1488ff66);
+}
+.visual span {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  color: #53627a;
+  font: 600 12px "Space Grotesk";
+}
+.v1 {
+  background: radial-gradient(circle at 50% 40%, #123c50, #080d17 65%);
+}
+.v2 {
+  background: radial-gradient(circle at 50% 40%, #202f66, #080d17 65%);
+}
+.projectCopy {
+  padding: 25px;
+}
+.projectCopy small {
+  color: #4baef7;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.projectCopy h3 {
+  font: 600 22px "Space Grotesk";
+}
+.projectCopy p {
+  color: #78859a;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* ============================== COMPONENTS GRID ============================== */
+.componentGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.componentGrid a {
+  border: 1px solid #1a2538;
+  padding: 28px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 20px;
+  background: #080d17;
+}
+.componentGrid a:hover {
+  border-color: #2479e8;
+  background: #0a1220;
+}
+.componentGrid svg:first-child {
+  color: #3dcaf0;
+}
+.componentGrid span {
+  font: 600 17px "Space Grotesk";
+}
+
+/* ============================== ABOUT SECTION ============================== */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  background: linear-gradient(120deg, #07142a, #060911);
+}
+.about em,
+.contact em {
+  font-style: normal;
+  color: #55cdf2;
+}
+.about p {
+  font-size: 17px;
+  color: #96a3b8;
+  line-height: 1.8;
+}
+
+/* ============================== CONTACT SECTION (homepage) ============================== */
+.contact {
+  text-align: center;
+  padding-top: 150px !important;
+  padding-bottom: 150px !important;
+}
+.contact h2 {
+  font-size: clamp(48px, 7vw, 90px);
+}
+.contact p {
+  max-width: 600px;
+  margin: 25px auto;
+  color: #8d99ad;
+  line-height: 1.7;
+}
+.big {
+  margin-top: 20px;
+  padding: 18px 25px;
+}
+
+/* ============================== FOOTER ============================== */
+footer {
+  border-top: 1px solid #172033;
+  padding: 35px max(7vw, 30px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #647188;
+  font-size: 12px;
+}
+footer .brand {
+  color: #fff;
+}
+footer .mark {
+  width: 28px;
+  height: 28px;
+}
+
+/* ============================== RESPONSIVE — HOMEPAGE (≤900px) ============================== */
+@media (max-width: 900px) {
+  nav {
+    display: none;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    background: #080d17;
+    padding: 25px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav.open {
+    display: flex;
+  }
+  .menu {
+    display: block;
+  }
+  .serviceGrid {
+    grid-template-columns: 1fr;
+  }
+  .service {
+    border-right: 0;
+    border-bottom: 1px solid #182235;
+  }
+  .projectGrid {
+    grid-template-columns: 1fr;
+  }
+  .sectionHead,
+  .about {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+  .componentGrid {
+    grid-template-columns: 1fr;
+  }
+  .heroGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .hero {
+    padding-top: 130px;
+    min-height: 760px;
+  }
+  footer {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
+
+/* ============================== PAGE HERO (inner pages) ============================== */
+.pageHero {
+  min-height: 560px;
+  padding: 170px max(7vw, 30px) 85px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid #172033;
+}
+.pageHero h1 {
+  font: 600 clamp(50px, 7vw, 92px)/1 "Space Grotesk";
+  letter-spacing: -0.055em;
+  margin: 22px 0;
+  max-width: 1050px;
+}
+.pageHero h1 span {
+  background: linear-gradient(90deg, #3e77ff, #2ce1ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.pageHero > p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #9ba7ba;
+  max-width: 720px;
+}
+.textLink {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  color: #64cfff;
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+/* ============================== HOME SERVICES / SPLIT LAYOUT VARIANTS ============================== */
+.homeServices {
+  grid-template-columns: repeat(3, 1fr);
+}
+.homeServices .service:last-child {
+  border-right: 0;
+}
+.homeSplit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px !important;
+  padding: 0 !important;
+  background: #182235;
+}
+.homeSplit > div {
+  background: #070c16;
+  padding: 90px max(7vw, 45px);
+}
+.homeSplit h2 {
+  font: 600 clamp(34px, 4vw, 54px)/1.08 "Space Grotesk";
+  letter-spacing: -0.04em;
+}
+.homeSplit p {
+  color: #8d99ad;
+  line-height: 1.7;
+  max-width: 540px;
+  margin-bottom: 30px;
+}
+
+/* ============================== PAGE SECTION SPACING UTILITIES ============================== */
+.pageSection {
+  padding-top: 90px !important;
+}
+.pageAbout {
+  padding-top: 100px !important;
+}
+.catalogNote {
+  color: #748198;
+  max-width: 760px;
+  line-height: 1.7;
+  margin: 28px 0 0;
+}
+
+/* ============================== CONTACT CARDS (contact page) ============================== */
+.contactCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.contactCards > a,
+.contactCards > div {
+  border: 1px solid #1a2538;
+  background: #080d17;
+  padding: 38px;
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+}
+.contactCards > a:hover {
+  border-color: #2479e8;
+}
+.contactCards svg {
+  color: #3ecdf1;
+  flex: 0 0 auto;
+}
+.contactCards small {
+  color: #4baef7;
+  letter-spacing: 0.12em;
+}
+.contactCards h3 {
+  font: 600 24px "Space Grotesk";
+  margin: 12px 0;
+}
+.contactCards p {
+  color: #8591a6;
+  line-height: 1.7;
+}
+.sectionHead > div > p {
+  max-width: 470px;
+  color: #8591a6;
+  line-height: 1.7;
+}
+
+/* ============================== RESPONSIVE — INNER PAGES (≤900px) ============================== */
+@media (max-width: 900px) {
+  .pageHero {
+    min-height: 500px;
+    padding-top: 135px;
+  }
+  .homeServices,
+  .homeSplit,
+  .contactCards {
+    grid-template-columns: 1fr;
+  }
+  .homeServices .service {
+    border-right: 0;
+  }
+  .homeSplit > div {
+    padding: 70px 30px;
+  }
+}
+
+/* ========================================
+   PROJECT TECHNOLOGY TAGS
+   ======================================== */
+
+.projectTechnologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.projectTechnologies span {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 7px 12px;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  color: #8edcff;
+
+  background: rgba(0, 174, 255, 0.08);
+
+  border: 1px solid rgba(0, 174, 255, 0.25);
+  border-radius: 999px;
+
+  white-space: nowrap;
+}
+
+/* ==========================================================
+   PROJECT CARDS — EASY TO EDIT
+   ========================================================== */
+
+/* Keep all project cards the same size */
+.project {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  border: 1px solid #182235;
+  background: #0a101c;
+
+  border-radius: 12px;
+}
+
+
+/* ----------------------------------------------------------
+   PROJECT IMAGE
+   All images automatically get the same shape.
+   You DO NOT need to resize your photos manually.
+   ---------------------------------------------------------- */
+
+.projectImage {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+
+  background: #0b1420;
+}
+
+.projectImage img {
+  width: 100%;
+  height: 100%;
+
+  /* Crops portrait/landscape photos to the same frame */
+  object-fit: cover;
+
+  /* Keeps the middle of the photo visible */
+  object-position: center;
+
+  display: block;
+
+  transition: transform 0.35s ease;
+}
+
+
+/* Small zoom effect when mouse is over a project */
+.project:hover .projectImage img {
+  transform: scale(1.035);
+}
+
+
+/* ----------------------------------------------------------
+   PROJECT TEXT
+   ---------------------------------------------------------- */
+
+.projectCopy {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  padding: 25px;
+}
+
+.projectCopy small {
+  color: #4baef7;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.projectCopy h3 {
+  font: 600 22px "Space Grotesk";
+  margin: 16px 0 12px;
+}
+
+.projectCopy p {
+  color: #78859a;
+  line-height: 1.6;
+  font-size: 14px;
+  margin: 0;
+}
+
+
+/* ----------------------------------------------------------
+   TECHNOLOGY TAGS
+   ---------------------------------------------------------- */
+
+.projectTechnologies {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  /* Pushes tags towards bottom of card */
+  margin-top: auto;
+  padding-top: 22px;
+}
+
+.projectTechnologies span {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 7px 12px;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  color: #8edcff;
+
+  background: rgba(0, 174, 255, 0.08);
+
+  border: 1px solid rgba(0, 174, 255, 0.25);
+  border-radius: 999px;
+
+  white-space: nowrap;
+}
+
+
+/* ----------------------------------------------------------
+   TABLET
+   ---------------------------------------------------------- */
+
+@media (max-width: 1100px) {
+
+  .projectGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* ----------------------------------------------------------
+   MOBILE
+   ---------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+  .projectGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .projectCopy {
+    padding: 20px;
+  }
+
+}
+
+/* ==========================================================
+   COMPONENT STORE
+   ========================================================== */
+
+.componentStore {
+  background: #080c16;
+}
+
+
+/* ---------------- SEARCH BAR ---------------- */
+
+.componentSearch {
+  max-width: 700px;
+  height: 58px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 0 20px;
+
+  background: #0a101c;
+
+  border: 1px solid #1c2940;
+  border-radius: 12px;
+
+  color: #4baef7;
+}
+
+.componentSearch:focus-within {
+  border-color: #287fff;
+}
+
+.componentSearch input {
+  width: 100%;
+
+  background: transparent;
+  border: none;
+  outline: none;
+
+  color: white;
+
+  font-family: Inter, Arial, sans-serif;
+  font-size: 15px;
+}
+
+.componentSearch input::placeholder {
+  color: #647188;
+}
+
+
+/* Search result count */
+
+.componentResults {
+  max-width: 700px;
+
+  margin: 0 auto 45px;
+
+  color: #647188;
+  font-size: 12px;
+}
+
+
+/* ==========================================================
+   PRODUCT GRID
+   ========================================================== */
+
+.productGrid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 18px;
+}
+
+
+/* Individual product */
+
+.productCard {
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #0a101c;
+
+  border: 1px solid #182235;
+  border-radius: 12px;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.productCard:hover {
+  transform: translateY(-4px);
+
+  border-color: #285a93;
+}
+
+
+/* ==========================================================
+   PRODUCT IMAGE
+   ========================================================== */
+
+.productImage {
+  width: 100%;
+
+  aspect-ratio: 1 / 1;
+
+  overflow: hidden;
+
+  background: #0e1522;
+}
+
+.productImage img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.35s ease;
+}
+
+.productCard:hover .productImage img {
+  transform: scale(1.04);
+}
+
+
+/* ==========================================================
+   PRODUCT INFORMATION
+   ========================================================== */
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  padding: 20px;
+}
+
+.productInfo small {
+  color: #4baef7;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.1em;
+}
+
+.productInfo h3 {
+  margin: 12px 0 10px;
+
+  font: 600 18px "Space Grotesk";
+
+  line-height: 1.3;
+}
+
+.productInfo p {
+  margin: 0;
+
+  color: #78859a;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* ==========================================================
+   PRODUCT BOTTOM
+   ========================================================== */
+
+.productBottom {
+  margin-top: auto;
+  padding-top: 22px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+/* Availability text */
+
+.availability {
+  color: #79d6ef;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+/* Inquire button */
+
+.inquireButton {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 9px 13px;
+
+  border: 1px solid #287fff;
+  border-radius: 7px;
+
+  background: rgba(36, 89, 255, 0.08);
+
+  color: white;
+
+  font-family: Inter, Arial, sans-serif;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.inquireButton:hover {
+  background: #2459ff;
+}
+
+
+/* ==========================================================
+   NOTHING FOUND
+   ========================================================== */
+
+.noProducts {
+  text-align: center;
+
+  padding: 80px 20px;
+
+  color: #78859a;
+}
+
+.noProducts h3 {
+  color: white;
+
+  font: 600 22px "Space Grotesk";
+}
+
+
+/* ==========================================================
+   RESPONSIVE COMPONENT STORE
+   ========================================================== */
+
+@media (max-width: 1100px) {
+
+  .productGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+
+@media (max-width: 800px) {
+
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 520px) {
+
+  .productGrid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* ==========================================================
+   COMPONENT CATALOGUE
+   ========================================================== */
+
+.catalogue {
+  background: #080c16;
+}
+
+
+/* SEARCH */
+
+.catalogueSearch {
+  max-width: 720px;
+
+  margin: 0 auto 25px;
+
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 0 20px;
+
+  border: 1px solid #1b2940;
+  border-radius: 12px;
+
+  background: #0a101c;
+
+  color: #4baef7;
+}
+
+.catalogueSearch:focus-within {
+  border-color: #287fff;
+}
+
+.catalogueSearch input {
+  width: 100%;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: white;
+
+  font-family: Inter, Arial, sans-serif;
+  font-size: 15px;
+}
+
+.catalogueSearch input::placeholder {
+  color: #647188;
+}
+
+
+/* ==========================================================
+   CATEGORY BUTTONS
+   ========================================================== */
+
+.categoryFilters {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-bottom: 30px;
+}
+
+.categoryButton {
+  padding: 9px 15px;
+
+  border: 1px solid #1b2940;
+  border-radius: 999px;
+
+  background: #0a101c;
+
+  color: #8290a6;
+
+  font-family: Inter, Arial, sans-serif;
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+.categoryButton:hover {
+  color: white;
+
+  border-color: #287fff;
+}
+
+.categoryButton.active {
+  color: white;
+
+  background: #2459ff;
+
+  border-color: #2459ff;
+}
+
+
+/* RESULT COUNT */
+
+.catalogueCount {
+  margin-bottom: 20px;
+
+  color: #647188;
+
+  font-size: 12px;
+}
+
+
+/* ==========================================================
+   SMALL COMPONENT CARDS
+   ========================================================== */
+
+.catalogueGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(6, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+
+.catalogueCard {
+  overflow: hidden;
+
+  border: 1px solid #182235;
+  border-radius: 10px;
+
+  background: #0a101c;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.catalogueCard:hover {
+  transform: translateY(-3px);
+
+  border-color: #2d6db4;
+}
+
+
+/* Component image */
+
+.catalogueImage {
+  width: 100%;
+
+  aspect-ratio: 1 / 1;
+
+  overflow: hidden;
+
+  background: #101725;
+}
+
+.catalogueImage img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.3s ease;
+}
+
+.catalogueCard:hover .catalogueImage img {
+  transform: scale(1.04);
+}
+
+
+/* One-line component name */
+
+.catalogueName {
+  padding: 13px 12px;
+
+  color: #e9edf5;
+
+  font: 500 13px "Space Grotesk";
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* ==========================================================
+   INDIVIDUAL PRODUCT PAGE
+   ========================================================== */
+
+.productPage {
+  min-height: 100vh;
+
+  padding:
+    130px max(7vw, 30px)
+    100px;
+}
+
+
+.backLink {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 35px;
+
+  color: #8290a6;
+
+  font-size: 13px;
+}
+
+.backLink:hover {
+  color: #64cfff;
+}
+
+
+/* Product image + information */
+
+.productLayout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: 70px;
+
+  align-items: start;
+}
+
+
+/* Large image */
+
+.productMainImage {
+  overflow: hidden;
+
+  aspect-ratio: 1 / 1;
+
+  border: 1px solid #182235;
+  border-radius: 14px;
+
+  background: #0a101c;
+}
+
+.productMainImage img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+
+/* ==========================================================
+   PRODUCT DETAILS
+   ========================================================== */
+
+.productCategory {
+  color: #4baef7;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+
+.productDetails h1 {
+  margin: 14px 0 30px;
+
+  font:
+    600 clamp(36px, 5vw, 60px) /
+    1.05 "Space Grotesk";
+
+  letter-spacing: -0.04em;
+}
+
+
+/* Availability + Price */
+
+.productMeta {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  margin-bottom: 35px;
+
+  border-top: 1px solid #1a2538;
+  border-bottom: 1px solid #1a2538;
+}
+
+.productMeta > div {
+  padding: 20px 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.productMeta small {
+  color: #647188;
+
+  font-size: 10px;
+
+  letter-spacing: 0.12em;
+}
+
+.productMeta strong {
+  font: 600 16px "Space Grotesk";
+
+  color: #dce7f5;
+}
+
+
+/* Description / Specifications */
+
+.productSection {
+  margin-top: 30px;
+}
+
+.productSection h2 {
+  font: 600 18px "Space Grotesk";
+
+  margin-bottom: 12px;
+}
+
+.productSection p,
+.productSection li {
+  color: #8996aa;
+
+  line-height: 1.75;
+
+  font-size: 14px;
+}
+
+.productSection ul {
+  padding-left: 20px;
+}
+
+
+/* ==========================================================
+   DATASHEET
+   ========================================================== */
+
+.datasheetButton {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  margin-top: 30px;
+
+  padding: 14px 18px;
+
+  border: 1px solid #26364e;
+  border-radius: 9px;
+
+  background: #0b121f;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.datasheetButton:hover {
+  border-color: #3382dd;
+}
+
+
+/* ==========================================================
+   WHATSAPP INQUIRY
+   ========================================================== */
+
+.productInquiry {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  margin-top: 12px;
+
+  padding: 16px 20px;
+
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #2459ff,
+      #08bde8
+    );
+
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* ==========================================================
+   RESPONSIVE CATALOGUE
+   ========================================================== */
+
+@media (max-width: 1200px) {
+
+  .catalogueGrid {
+    grid-template-columns:
+      repeat(5, minmax(0, 1fr));
+  }
+
+}
+
+
+@media (max-width: 950px) {
+
+  .catalogueGrid {
+    grid-template-columns:
+      repeat(4, minmax(0, 1fr));
+  }
+
+}
+
+
+@media (max-width: 750px) {
+
+  .catalogueGrid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+
+  .productLayout {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+}
+
+
+@media (max-width: 520px) {
+
+  .catalogueGrid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  .productPage {
+    padding:
+      115px 20px
+      70px;
+  }
+
+}
+
+/* Catalogue launch-price notice */
+.cataloguePriceNote {
+  margin: -10px 0 24px;
+  color: #718097;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* ==========================================================
+   CONTACT — THREE CARDS
+   ========================================================== */
+.contactCardsThree {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* ==========================================================
+   ABOUT — TEAM
+   ========================================================== */
+.teamSection {
+  background: #080c16;
+}
+
+.teamSection em {
+  font-style: normal;
+  color: #55cdf2;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.teamCard {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  min-height: 240px;
+  overflow: hidden;
+  border: 1px solid #1a2538;
+  border-radius: 12px;
+  background: #0a101c;
+}
+
+.teamPhoto {
+  min-height: 240px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 35%, #163e6d, #0a101c 70%);
+}
+
+.teamPhoto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.teamPhoto span {
+  font: 600 56px "Space Grotesk";
+  color: #3ecdf1;
+  opacity: 0.45;
+}
+
+.teamCopy {
+  padding: 32px;
+  align-self: center;
+}
+
+.teamCopy small {
+  color: #4baef7;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.teamCopy h3 {
+  margin: 12px 0;
+  font: 600 24px "Space Grotesk";
+}
+
+.teamCopy p {
+  margin: 0;
+  color: #8591a6;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+@media (max-width: 1000px) {
+  .contactCardsThree,
+  .teamGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .teamCard {
+    grid-template-columns: 1fr;
+  }
+
+  .teamPhoto {
+    min-height: 260px;
+  }
+}
+
+.linkedinButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-top: 14px;
+
+  color: #8edcff;
+  font-size: 12px;
+  font-weight: 600;
+
+  transition: color 0.2s ease;
+}
+
+.linkedinButton:hover {
+  color: white;
+}
+/* ==========================================================
+   VISUAL LAYER — INNER PAGE HEROES
+   ========================================================== */
+.pageHeroContent { position: relative; z-index: 2; }
+.pageHeroGraphic { position: absolute; right: max(6vw, 30px); top: 50%; width: min(34vw, 430px); aspect-ratio: 1; transform: translateY(-48%) rotate(-4deg); opacity: .78; z-index: 0; }
+.graphicBoard { position: absolute; inset: 8%; border: 1px solid #2a5e91; border-radius: 28px; background: linear-gradient(145deg,#0c1a2cdd,#07101ddd); box-shadow: inset 0 0 70px #0b7eff16,0 30px 80px #0008; }
+.graphicBoard:before { content:""; position:absolute; inset:18px; border:1px solid #1b3858; border-radius:20px; background-image:linear-gradient(#39aaff12 1px,transparent 1px),linear-gradient(90deg,#39aaff12 1px,transparent 1px); background-size:28px 28px; }
+.graphicBoard .chip { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:92px; height:92px; display:grid; place-items:center; border:1px solid #2b8ee8; border-radius:14px; background:#0a1727; color:#53d8ff; font:600 34px "Space Grotesk"; box-shadow:0 0 40px #1488ff35; z-index:2; }
+.trace { position:absolute; display:block; background:#287bc0; opacity:.8; z-index:1; }
+.t1,.t3 { height:1px; width:28%; top:50%; }.t1{left:9%}.t3{right:9%}
+.t2,.t4 { width:1px; height:28%; left:50%; }.t2{top:9%}.t4{bottom:9%}
+.node { position:absolute; width:10px; height:10px; border:2px solid #43cfff; border-radius:50%; box-shadow:0 0 14px #43cfff; }
+.n1{left:8%;top:49%}.n2{right:8%;top:49%}.n3{left:49%;top:8%}.n4{left:49%;bottom:8%}
+
+/* Homepage technical visual */
+.homeHeroGraphic { position:absolute; right:7vw; top:31%; width:230px; height:230px; display:grid; place-items:center; border:1px solid #1d4f7d; border-radius:50%; background:radial-gradient(circle,#0d2847aa,#07101b22 65%,transparent 66%); opacity:.7; z-index:-1; }
+.homeHeroGraphic:before,.homeHeroGraphic:after{content:"";position:absolute;border:1px solid #2876b8;border-radius:50%;inset:22px}.homeHeroGraphic:after{inset:55px;border-style:dashed;animation:metaSpin 18s linear infinite}.homeHeroGraphic svg{width:76px;height:76px;color:#45cfff}.homeHeroGraphic span{position:absolute;bottom:-32px;color:#52718f;font-size:9px;letter-spacing:.2em;white-space:nowrap}@keyframes metaSpin{to{transform:rotate(360deg)}}
+
+/* ==========================================================
+   SERVICES — RICH SHOWCASE
+   ========================================================== */
+.servicesShowcase { background:#080c16; }
+.serviceShowcaseGrid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+.serviceShowcaseCard { display:grid; grid-template-columns:190px 1fr; min-height:330px; overflow:hidden; border:1px solid #19263a; border-radius:14px; background:#0a101c; }
+.serviceShowcaseCard:last-child { grid-column:1 / -1; grid-template-columns:260px 1fr; }
+.serviceVisual { position:relative; display:grid; place-items:center; min-height:100%; overflow:hidden; background:radial-gradient(circle at 50% 45%,#123d68,#08101b 68%); border-right:1px solid #19263a; }
+.serviceVisual > svg { width:72px; height:72px; color:#49d3f6; filter:drop-shadow(0 0 24px #1488ff55); z-index:2; }
+.serviceVisual > span { position:absolute; top:20px; left:20px; color:#58718d; font:600 11px "Space Grotesk"; z-index:2; }
+.serviceVisualGrid { position:absolute; inset:0; background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px); background-size:30px 30px; mask-image:radial-gradient(circle,black,transparent 75%); }
+.serviceShowcaseCopy { padding:34px; display:flex; flex-direction:column; }
+.serviceShowcaseCopy small { color:#4baef7; font-size:10px; letter-spacing:.12em; }
+.serviceShowcaseCopy h3 { font:600 25px "Space Grotesk"; margin:11px 0; }
+.serviceShowcaseCopy p { color:#8290a5; line-height:1.7; font-size:14px; margin:0 0 20px; }
+.servicePoints { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px 14px; margin-bottom:24px; }
+.servicePoints span { display:flex; align-items:center; gap:8px; color:#a6b1c2; font-size:12px; }
+.servicePoints svg { color:#3ecdf1; flex:none; }
+.serviceShowcaseCopy > a { margin-top:auto; display:inline-flex; align-items:center; gap:8px; color:#64cfff; font-size:12px; }
+.processSection { background:linear-gradient(120deg,#07142a,#060911); }
+.processGrid { display:grid; grid-template-columns:repeat(4,1fr); border:1px solid #1a2940; border-radius:14px; overflow:hidden; }
+.processCard { padding:30px; min-height:240px; border-right:1px solid #1a2940; background:#08101bbb; }
+.processCard:last-child { border-right:0; }
+.processCard > div { display:flex; justify-content:space-between; align-items:center; color:#48cef3; }.processCard > div span{color:#53647b;font-size:11px}.processCard h3{font:600 20px "Space Grotesk";margin:38px 0 12px}.processCard p{color:#7f8da2;font-size:13px;line-height:1.7;margin:0}
+
+@media (max-width: 1000px) {
+  .pageHeroGraphic { width:300px; right:-70px; opacity:.38; }
+  .serviceShowcaseGrid { grid-template-columns:1fr; }
+  .serviceShowcaseCard:last-child { grid-column:auto; grid-template-columns:190px 1fr; }
+  .processGrid { grid-template-columns:repeat(2,1fr); }
+  .processCard:nth-child(2){border-right:0}.processCard:nth-child(-n+2){border-bottom:1px solid #1a2940}
+}
+@media (max-width: 650px) {
+  .pageHeroGraphic { width:240px; right:-100px; top:48%; opacity:.25; }
+  .homeHeroGraphic { width:160px; height:160px; right:-25px; top:28%; opacity:.4; }
+  .serviceShowcaseCard,.serviceShowcaseCard:last-child { grid-template-columns:1fr; }
+  .serviceVisual { min-height:180px; border-right:0; border-bottom:1px solid #19263a; }
+  .servicePoints { grid-template-columns:1fr; }
+  .processGrid { grid-template-columns:1fr; }
+  .processCard,.processCard:nth-child(2){border-right:0;border-bottom:1px solid #1a2940}.processCard:last-child{border-bottom:0}
+}
+
+/* ==========================================================
+   SERVICES — REAL ENGINEERING PHOTOGRAPHY
+   ========================================================== */
+.servicePhoto {
+  background: #08101b;
+}
+.servicePhoto img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .45s ease;
+}
+.serviceShowcaseCard:hover .servicePhoto img {
+  transform: scale(1.045);
+}
+.servicePhotoShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(5,8,18,.04), rgba(5,8,18,.55));
+  pointer-events: none;
+}
+.servicePhoto > span {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 3;
+  padding: 6px 9px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 6px;
+  background: rgba(5,8,18,.72);
+  backdrop-filter: blur(8px);
+  color: #dce8f7;
+}
+
+/* ==========================================================
+   HOME — CAPABILITIES WITH REAL PHOTOGRAPHY
+   ========================================================== */
+.homeCapabilities {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 18px;
+}
+.homeCapabilityCard {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #182235;
+  border-radius: 13px;
+  background: #090f1a;
+  transition: transform .25s ease, border-color .25s ease;
+}
+.homeCapabilityCard:nth-child(4) { grid-column: 2 / span 2; }
+.homeCapabilityCard:nth-child(5) { grid-column: 4 / span 2; }
+.homeCapabilityCard:hover { transform: translateY(-4px); border-color: #2a639f; }
+.homeCapabilityImage {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #0b1420;
+}
+.homeCapabilityImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease;
+}
+.homeCapabilityCard:hover .homeCapabilityImage img { transform: scale(1.045); }
+.homeCapabilityImage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 45%, rgba(5,8,18,.55));
+}
+.homeCapabilityImage > span {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  padding: 5px 8px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 6px;
+  background: rgba(5,8,18,.7);
+  backdrop-filter: blur(8px);
+  color: #dce8f7;
+  font-size: 10px;
+}
+.homeCapabilityCopy { display:flex; flex-direction:column; flex:1; padding:22px; }
+.homeCapabilityCopy h3 { margin:0 0 10px; font:600 20px "Space Grotesk"; }
+.homeCapabilityCopy p { margin:0; color:#78859a; font-size:13px; line-height:1.7; }
+.homeCapabilityLink { display:inline-flex; align-items:center; gap:7px; margin-top:auto; padding-top:20px; color:#64cfff; font-size:12px; font-weight:600; }
+
+@media (max-width: 950px) {
+  .homeCapabilities { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .homeCapabilityCard,
+  .homeCapabilityCard:nth-child(4),
+  .homeCapabilityCard:nth-child(5) { grid-column:auto; }
+  .homeCapabilityCard:last-child { grid-column:1 / -1; max-width:calc(50% - 9px); width:100%; justify-self:center; }
+}
+@media (max-width: 650px) {
+  .homeCapabilities { grid-template-columns:1fr; }
+  .homeCapabilityCard:last-child { grid-column:auto; max-width:none; }
+}
