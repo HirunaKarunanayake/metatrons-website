@@ -49,6 +49,24 @@ const projects = [
   },
 
   {
+    title: 'Smart Temperature & Humidity Monitoring System',
+
+    category: 'Embedded Systems & Automation',
+
+    description:
+      'A PIC microcontroller-based environmental monitoring and automatic cooling system designed to measure temperature and humidity in real time. The system uses a DHT11 sensor and a 16×2 LCD to display environmental conditions, while automatically controlling a DC fan through a MOSFET driver when the temperature exceeds a predefined threshold. Developed and tested as a functional hardware prototype.',
+
+    image: '/projects/temperature-humidity.png',
+
+    technologies: [
+      'PIC',
+      'Embedded C',
+      'MPLAB X',
+      'DHT11 Sensor',
+    ],
+  },
+
+  {
     title: 'Autonomous Floor Cleaning Robot',
 
     category: 'Robotics',

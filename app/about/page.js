@@ -68,47 +68,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="teamSection">
-        <div className="sectionHead">
-          <div>
-            <span>OUR TEAM</span>
-            <h2>The people behind <em>Metatrons.</em></h2>
-          </div>
-          <p>
-            A hands-on engineering team focused on turning ideas and technical
-            requirements into working systems.
-          </p>
-        </div>
-
-        <div className="teamGrid">
-          {team.map((member) => (
-            <article className="teamCard" key={member.name}>
-              <div className="teamPhoto">
-                {member.image ? (
-                  <img src={member.image} alt={member.name} />
-                ) : (
-                  <span>{member.name.split(' ').slice(-1)[0]}</span>
-                )}
-              </div>
-              <div className="teamCopy">
-                <small>{member.role}</small>
-                <h3>{member.name}</h3>
-                <p>{member.bio}</p>
-              </div>
-              <a
-                href={member.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="linkedinButton"
-                aria-label={`${member.name} on LinkedIn`}
-              >
-                <Linkedin size={18} />
-                LinkedIn
-              </a>
-            </article>
-          ))}
-        </div>
-      </section>
+    
 
       {/* <WhatsAppCTA /> */}
     </PageShell>
